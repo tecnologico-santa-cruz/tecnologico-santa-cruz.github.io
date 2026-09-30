@@ -16,6 +16,14 @@ Extrae TODO el archivo RAR o ZIP. Abre `index.html` con Chrome, Edge o Firefox. 
 
 El `style.css` antiguo de la raíz ya no se utiliza: la página nueva utiliza `css/style.css`.
 
+## Cambios de la versión 2
+
+- Facebook corregido a https://www.facebook.com/Tecnoitsc
+- Iconos grandes, centrados y en dos columnas en móviles, siguiendo tu referencia.
+- Portada más compacta en móviles para llegar antes a los enlaces.
+- Foto de fondo de Santa Cruz de la Sierra incluida localmente.
+- Dos contactos reales de WhatsApp con sus nombres.
+
 ## Lo que ya incluye
 
 - Diseño adaptable, navegación móvil y accesibilidad básica (teclado, foco, etiquetas, contraste, reducción de movimiento).
@@ -23,21 +31,19 @@ El `style.css` antiguo de la raíz ya no se utiliza: la página nueva utiliza `c
 - Iconos SVG locales; sin fuentes, librerías ni imágenes externas obligatorias.
 - Directorio con categorías y búsqueda que reconoce palabras sin tildes.
 - Facebook, TikTok, sitio institucional, teléfonos, correo y mapa tomados de tu HTML original.
-- Ventana de contacto con alternativas cuando WhatsApp aún no está configurado.
+- Accesos directos a los dos WhatsApp y selector flotante de contacto.
 - Noticias manuales y enlaces a las publicaciones de Facebook y TikTok.
 
 ## Cambiar enlaces y contactos
 
 Abre `js/config.js` con un editor de texto. Conserva las comillas, comas y corchetes.
 
-**WhatsApp:** los números de tu HTML eran ejemplos (`59100000000`), por eso no se utilizaron. Introduce los números reales con código de país, sin `+`, espacios ni guiones:
+**WhatsApp:** ya se incluyen los dos contactos facilitados:
 
-```js
-"whatsappInscripciones": "591NUMERO_REAL",
-"whatsappAcademica": "591NUMERO_REAL"
-```
+- TECNO OFICIAL Luis: +591 74165292, campo `whatsappLuis`.
+- Corporativo Tecnológico Santa Cruz: +591 74165293, campo `whatsappCorporativo`.
 
-Sustituye `NUMERO_REAL` por los dígitos reales. El botón flotante ofrece ambos canales cuando estén configurados. Si solo hay uno, muestra ese canal. Los celulares existentes se conservan como llamadas telefónicas: no se asume que sean los WhatsApp de una determinada oficina.
+Los botones abren directamente el chat correspondiente. El botón flotante permite elegir. Para cambiar un número, edita el campo correspondiente en `js/config.js` (solo dígitos, con código de país) y actualiza también las etiquetas visibles de contacto en `js/app.js` e `index.html`.
 
 **Instagram y LinkedIn:** pega las URLs completas en los campos correspondientes. Solo se muestran cuando hay un enlace válido. Facebook y TikTok ya contienen los enlaces aportados.
 
@@ -47,13 +53,13 @@ Antes de publicar, comprueba que los datos originales sigan vigentes y que cada 
 
 ## Logo y fotografías reales
 
-El logo ya está incluido. Puedes reemplazar `assets/logo.png` por otra versión con el mismo nombre. La portada actual es una composición gráfica original de CSS y el logo, no una fotografía del campus.
+El logo ya está incluido. Puedes reemplazar `assets/logo.png` por otra versión con el mismo nombre. La portada utiliza la foto de Santa Cruz de la Sierra que facilitaste, con una capa verde para mejorar la lectura. La imagen representa la ciudad; no se presenta como foto del campus. En móvil también aparece suavemente detrás de los accesos.
 
 Para usar una foto real:
 1. Guarda la foto como `assets/portada.jpg`.
-2. Cambia `"fotoPortada": ""` por `"fotoPortada": "assets/portada.jpg"` en `js/config.js`.
+2. Cambia el valor de `fotoPortada` a `"assets/portada.jpg"` en `js/config.js`.
 
-Usa fotos autorizadas, preferentemente horizontales, de alrededor de 1600 px de ancho y menos de 500 KB. Las imágenes que mencionaste no estaban adjuntas, aparte del logo recuperado del repositorio.
+Usa fotos autorizadas, preferentemente horizontales, de alrededor de 1600 px de ancho y menos de 500 KB. La foto actual se guarda en `assets/santa-cruz.jpg`.
 
 ## Publicar noticias
 

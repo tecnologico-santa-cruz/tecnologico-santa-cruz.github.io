@@ -9,6 +9,11 @@ window.ITSC = {
   "linkedin": "",
   "sitioWeb": "https://www.itsc.edu.bo/",
   "telefono": "+59133489901",
+  "telefonos": [
+    { "area": "Dirección de Coordinación de Carrera", "numero": "+59133492192", "visible": "3492192" },
+    { "area": "Dirección Académica", "numero": "+59133489901", "visible": "3489901" },
+    { "area": "Rectorado", "numero": "+59133460808", "visible": "346-0808" }
+  ],
   "celulares": [
     "+59174165292",
     "+59174165293"
@@ -17,6 +22,6 @@ window.ITSC = {
   "direccion": "Av. Paragua, entre 3er Anillo interno y externo",
   "mapa": "https://www.google.com/maps?ll=-17.769422,-63.156704&z=16&t=m&hl=es-419&gl=BO&mapclient=embed&cid=1259026861083397859",
   "noticias": [],
-  "whatsappLuis": "59174165292",
-  "whatsappCorporativo": "59174165293"
+  "whatsappInscripciones": "59174165292",
+  "whatsappAcademica": "59174165293"
 };

@@ -98,4 +98,4 @@ La estética usa verde, blanco y formas geométricas como inspiración corporati
 
 La galería incluye los dos afiches originales completos, sin recortarlos. Avanza cada 6 segundos, permite deslizar, usar flechas y pausar; se detiene mientras se utiliza con teclado o ratón y cuando la pestaña está oculta. Respeta la preferencia de movimiento reducido. Toca un afiche para ampliarlo.
 
-Los teléfonos de Coordinación de Carrera, Dirección Académica y Rectorado se configuran en `telefonos` de `js/config.js`.
+Los teléfonos fijos se retiraron porque ya no están disponibles. Se mantienen los dos canales de WhatsApp y el correo. La sección «Comparte con tus amigos» incluye el QR proporcionado y permite descargarlo o compartir la web por WhatsApp.

@@ -6,10 +6,9 @@ const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className
 const wa=number=>/^\d{10,15}$/.test(String(number))?`https://wa.me/${number}`:'';
 const external=a=>{if(/^https?:/.test(a.href)){a.target='_blank';a.rel='noopener noreferrer'}};
 document.querySelectorAll('[data-icon]').forEach(n=>n.innerHTML=icon(n.dataset.icon));
-document.querySelectorAll('[data-link]').forEach(a=>{let key=a.dataset.link,url=key==='telefono'?'tel:'+C.telefono:key==='correo'?'mailto:'+C.correo:C[key];a.href=safeUrl(url);external(a)});
+document.querySelectorAll('[data-link]').forEach(a=>{let key=a.dataset.link,url=key==='correo'?'mailto:'+C.correo:C[key];a.href=safeUrl(url);external(a)});
 document.getElementById('year').textContent=new Date().getFullYear();
 document.getElementById('contact-email').textContent=C.correo;
-C.telefonos.forEach(phone=>{const a=el('a');a.href='tel:'+phone.numero;const symbol=el('span');symbol.innerHTML=icon('phone');const detail=el('div');detail.append(el('small','',phone.area),el('strong','',phone.visible));a.append(symbol,detail,el('span','','↗'));document.getElementById('contact-phones').append(a)});
 document.getElementById('contact-address').textContent=C.direccion;
 if(C.logo)document.querySelectorAll('img[src="assets/logo.png"]').forEach(n=>n.src=C.logo);
 if(C.fotoPortada){document.documentElement.style.setProperty('--city-photo',`url(${JSON.stringify(new URL(C.fotoPortada,document.baseURI).href)})`)}
@@ -21,7 +20,6 @@ const rows=[
  {title:'Sitio institucional',desc:'www.itsc.edu.bo',icon:'institute',cat:'Institución',url:C.sitioWeb},
  {title:'Cómo llegar',desc:C.direccion,icon:'map',cat:'Institución',url:C.mapa},
  {title:'Correo electrónico',desc:C.correo,icon:'mail',cat:'Atención',url:'mailto:'+C.correo},
- ...C.telefonos.map(phone=>({title:phone.area,desc:phone.visible,icon:'phone',cat:'Atención',url:'tel:'+phone.numero})),
  ...['instagram','linkedin'].filter(k=>safeUrl(C[k])).map(k=>({title:k==='instagram'?'Instagram':'LinkedIn',desc:'Conecta con nuestra comunidad.',icon:k,cat:'Redes sociales',url:C[k]}))
 ];
 let filter='Todos';const query=document.getElementById('search');
@@ -35,7 +33,7 @@ function closeMenu(){nav.classList.remove('open');toggle.setAttribute('aria-expa
 toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 ['facebook','tiktok','instagram','linkedin'].forEach(k=>{if(!safeUrl(C[k]))return;const a=el('a');a.href=C[k];a.setAttribute('aria-label',k==='tiktok'?'TikTok':k[0].toUpperCase()+k.slice(1));a.innerHTML=icon(k);external(a);document.getElementById('contact-socials').append(a)});
 const dialog=document.getElementById('contact-dialog');
-function contact(area){const links=document.getElementById('dialog-links');links.replaceChildren();const available=[['Información de inscripciones · +591 74165292',wa(C.whatsappInscripciones)],['Información académica · +591 74165293',wa(C.whatsappAcademica)]].filter(x=>x[1]);document.getElementById('dialog-message').textContent=available.length?'Elige el canal de atención para tu consulta.':'El canal de WhatsApp todavía no está disponible en este portal. Puedes comunicarte por teléfono o correo.';available.concat([['Llamar al instituto','tel:'+C.telefono],['Enviar un correo','mailto:'+C.correo]]).forEach(([label,url])=>{const a=el('a','button primary',label+' ↗');a.href=url;external(a);links.append(a)});dialog.showModal()}
+function contact(area){const links=document.getElementById('dialog-links');links.replaceChildren();const available=[['Información de inscripciones · +591 74165292',wa(C.whatsappInscripciones)],['Información académica · +591 74165293',wa(C.whatsappAcademica)]].filter(x=>x[1]);document.getElementById('dialog-message').textContent=available.length?'Elige el canal de atención para tu consulta.':'El canal de WhatsApp todavía no está disponible en este portal. Puedes comunicarte por correo.';available.concat([['Enviar un correo','mailto:'+C.correo]]).forEach(([label,url])=>{const a=el('a','button primary',label+' ↗');a.href=url;external(a);links.append(a)});dialog.showModal()}
 document.querySelectorAll('[data-contact]').forEach(b=>b.addEventListener('click',()=>contact(b.dataset.contact)));document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 (C.noticias||[]).filter(n=>n.publicado===true).forEach(n=>{const article=el('article','news-item');if(n.imagen){const image=el('img');image.src=n.imagen;image.alt=n.alt||'';image.loading='lazy';article.append(image)}if(n.fecha&&/^\d{4}-\d{2}-\d{2}$/.test(n.fecha)){const time=el('time','',new Date(n.fecha+'T12:00:00').toLocaleDateString('es-BO',{year:'numeric',month:'long',day:'numeric'}));time.dateTime=n.fecha;article.append(time)}article.append(el('h3','',n.titulo),el('p','',n.resumen));if(safeUrl(n.enlace)){const a=el('a','text-link','Leer publicación ↗');a.href=n.enlace;external(a);article.append(a)}document.getElementById('news-list').append(article)});
 

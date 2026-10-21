@@ -40,8 +40,8 @@ Abre `js/config.js` con un editor de texto. Conserva las comillas, comas y corch
 
 **WhatsApp:** ya se incluyen los dos contactos facilitados:
 
-- TECNO OFICIAL Luis: +591 74165292, campo `whatsappLuis`.
-- Corporativo Tecnológico Santa Cruz: +591 74165293, campo `whatsappCorporativo`.
+- Información de inscripciones: +591 74165292, campo `whatsappInscripciones`.
+- Información académica: +591 74165293, campo `whatsappAcademica`.
 
 Los botones abren directamente el chat correspondiente. El botón flotante permite elegir. Para cambiar un número, edita el campo correspondiente en `js/config.js` (solo dígitos, con código de país) y actualiza también las etiquetas visibles de contacto en `js/app.js` e `index.html`.
 
@@ -93,3 +93,9 @@ Es un EJEMPLO DE ESTRUCTURA: sustituye el contenido por datos reales antes de pu
 - `assets/logo.png`: logo existente del instituto.
 
 La estética usa verde, blanco y formas geométricas como inspiración corporativa. No utiliza el nombre, logo ni recursos gráficos de Schneider Electric. No hay analítica, formularios que recojan datos, inicio de sesión ni panel de administración. Es un sitio estático compatible con GitHub Pages.
+
+## Galería automática y teléfonos por área
+
+La galería incluye los dos afiches originales completos, sin recortarlos. Avanza cada 6 segundos, permite deslizar, usar flechas y pausar; se detiene mientras se utiliza con teclado o ratón y cuando la pestaña está oculta. Respeta la preferencia de movimiento reducido. Toca un afiche para ampliarlo.
+
+Los teléfonos de Coordinación de Carrera, Dirección Académica y Rectorado se configuran en `telefonos` de `js/config.js`.

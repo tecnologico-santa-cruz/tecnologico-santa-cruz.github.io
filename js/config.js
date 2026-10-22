@@ -1,7 +1,7 @@
 // EDITA AQUÍ los contactos, las imágenes y las noticias. Lee LEEME.md.
 window.ITSC = {
   "nombre": "Instituto Tecnológico Santa Cruz",
-  "logo": "assets/logo.png",
+  "logo": "assets/logo-itsc-verde.svg",
   "fotoPortada": "assets/santa-cruz.jpg",
   "facebook": "https://www.facebook.com/Tecnoitsc",
   "tiktok": "https://www.tiktok.com/@itsc_rm2312",

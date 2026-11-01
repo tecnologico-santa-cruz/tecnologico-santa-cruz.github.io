@@ -1,0 +1,505 @@
+/* contenido: reglas de la sección y sus adaptaciones móviles. */
+
+.news-section {
+  background: rgb(244, 247, 243);
+}
+
+.channel-news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.news-art {
+  min-height: 350px;
+  background: rgb(13, 96, 62);
+  position: relative;
+  padding: 35px;
+  color: white;
+  overflow: hidden;
+}
+
+.news-art::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border: 50px solid rgba(182, 237, 131, 0.15);
+  border-radius: 50%;
+  right: -200px;
+  top: 30px;
+}
+
+.news-art > span:first-child {
+  background: rgba(255, 255, 255, 0.08);
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.news-art svg {
+  width: 19px;
+  height: 19px;
+}
+
+.news-art-type {
+  display: block;
+  font-size: 52px;
+  line-height: 1.03;
+  letter-spacing: -2px;
+  font-weight: 600;
+}
+
+.news-art-type em {
+  font-style: normal;
+  color: var(--bright);
+}
+
+.news-art-bottom {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 35px;
+}
+
+.news-copy {
+  padding: 42px;
+  align-self: center;
+}
+
+.pill {
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.news-copy h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  margin: 18px 0px;
+}
+
+.news-copy p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.tiktok-link {
+  display: flex;
+  margin-top: 18px;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.news-list:not(:empty) {
+  margin-bottom: 25px;
+}
+
+.news-item {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.news-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+.news-item h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.news-item p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.news-item time {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.contact-section {
+  background: rgb(16, 63, 45);
+  color: white;
+  padding: 65px 0px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+
+.contact-section .eyebrow {
+  color: var(--bright);
+}
+
+.contact-section h2 {
+  font-size: 42px;
+}
+
+.contact-section p {
+  color: rgb(194, 214, 200);
+  font-size: 13px;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.contact-socials a {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(86, 113, 95);
+  border-radius: 4px;
+  width: 42px;
+  height: 42px;
+}
+
+.contact-socials a:hover {
+  background: rgb(39, 99, 72);
+}
+
+.contact-socials svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-details {
+  align-self: center;
+}
+
+:is(.contact-details, #contact-whatsapp) > a {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 23px 0px;
+  border-bottom: 1px solid rgb(58, 95, 76);
+}
+
+:is(.contact-details, #contact-whatsapp) > a:first-child {
+  padding-top: 0px;
+}
+
+:is(.contact-details, #contact-whatsapp) > a > span:first-child {
+  color: var(--bright);
+}
+
+:is(.contact-details, #contact-whatsapp) > a > span:last-child {
+  margin-left: auto;
+}
+
+.contact-details div {
+  min-width: 0px;
+}
+
+.contact-details small {
+  display: block;
+  color: rgb(169, 199, 179);
+  letter-spacing: 1.5px;
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+
+.contact-details strong {
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.contact-details div > span {
+  font-size: 12px;
+  color: rgb(194, 214, 200);
+}
+
+.floating-contact {
+  position: fixed;
+  right: 25px;
+  bottom: 22px;
+  background: var(--green);
+  color: white;
+  border: 1px solid rgb(193, 217, 194);
+  box-shadow: rgba(16, 63, 45, 0.145) 0px 5px 20px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  z-index: 25;
+  font-size: 12px;
+}
+
+.floating-contact:hover {
+  background: rgb(4, 88, 47);
+}
+
+dialog {
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 36px;
+  max-width: 450px;
+  width: calc(100% - 35px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 80px;
+}
+
+dialog::backdrop {
+  background: rgba(6, 37, 23, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+dialog h2 {
+  font-size: 28px;
+  margin-top: 18px;
+}
+
+dialog p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.dialog-close {
+  position: absolute;
+  right: 13px;
+  top: 8px;
+  background: transparent;
+  border: 0px;
+  font-size: 28px;
+}
+
+.dialog-icon {
+  color: var(--green);
+}
+
+#dialog-links {
+  display: grid;
+  gap: 10px;
+}
+
+.dialog-note {
+  font-size: 11px;
+  margin: 20px 0px 0px;
+}
+
+@media (max-width: 1050px) {
+  .news-copy {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .contact-grid {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 760px) {
+  .channel-news {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .news-art {
+    min-height: 295px;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .news-art-type {
+    font-size: 47px;
+  }
+}
+
+@media (max-width: 760px) {
+  .news-copy {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .news-copy h3 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 760px) {
+  .news-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-section h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-section {
+    padding: 45px 0px;
+  }
+}
+
+@media (max-width: 760px) {
+  :is(.contact-details, #contact-whatsapp) > a {
+    gap: 14px;
+  }
+}
+
+.contact-details .button {
+  white-space: normal;
+}
+
+.dialog-note {
+  line-height: 1.5;
+}
+
+#dialog-links .button {
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .floating-contact {
+    padding: 12px;
+    right: 13px;
+    bottom: 13px;
+  }
+}
+
+@media (max-width: 760px) {
+  .floating-contact > span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .floating-contact svg {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-details strong {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-details small {
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 760px) {
+  :is(.contact-details, #contact-whatsapp) > a:first-child {
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 760px) {
+  :is(.contact-details, #contact-whatsapp) > a {
+    min-height: 78px;
+  }
+}
+
+.share-panel {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 50px;
+  align-items: center;
+  padding: 42px;
+  background: var(--pale);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.share-copy p:not(.eyebrow) {
+  max-width: 540px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.share-copy .qr-download {
+  display: flex;
+  width: fit-content;
+  margin-top: 18px;
+}
+
+.share-qr {
+  margin: 0px;
+  text-align: center;
+}
+
+.share-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: white;
+  border-radius: 8px;
+}
+
+.share-qr figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .share-panel {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 760px) {
+  .share-qr {
+    width: min(280px, 100%);
+    margin: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .share-copy h2 {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 760px) {
+  .share-copy .button {
+    gap: 12px;
+  }
+}

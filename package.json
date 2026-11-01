@@ -1,0 +1,16 @@
+{
+  "name": "instituto-tecnologico-santa-cruz",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portal institucional estático, sin compilación ni dependencias en producción.",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "version": "node scripts/version.js",
+    "test": "node --test tests/data.test.js",
+    "test:browser": "node tests/browser.js"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
